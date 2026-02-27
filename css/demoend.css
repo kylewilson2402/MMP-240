@@ -1,0 +1,160 @@
+/* =============== Assignments List (top of page) =============== */
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #0f172a;
+}
+
+/* style the "Assignments List" heading */
+body > h3{
+  max-width: 1100px;
+  margin: 24px auto 10px auto;
+  padding: 0 16px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* style the ordered list like a clean nav bar */
+body > ol{
+  max-width: 1100px;
+  margin: 0 auto 18px auto;
+  padding: 12px 16px;
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+/* each list item becomes a “pill button” */
+body > ol > li{
+  margin: 0;
+  padding: 0;
+}
+
+body > ol > li > a{
+  display: inline-block;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+
+  color: #0f172a;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  transition: 0.15s ease;
+}
+
+body > ol > li > a:hover{
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+/* highlight the current page link (layout.html) */
+body > ol > li > a[href="layout.html"]{
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+/* add spacing so the layout box doesn't stick to the list */
+#container{
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+}
+
+/* Reset (given) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* { box-sizing: border-box; }
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* --- FLEXBOX LAYOUT (matches the goal image) --- */
+#container{
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;              /* lets header/footer span full width */
+}
+
+/* Order so layout is: header, (nav main aside), footer */
+header{ order: 0; }
+nav{ order: 1; }
+main{ order: 2; }
+aside{ order: 3; }
+footer{ order: 4; }
+
+/* Header + Footer full width */
+header, footer{
+  flex: 0 0 100%;
+  padding: 28px;
+  font-weight: 700;
+}
+
+header{ background: #19b7e6; }
+footer{ background: #4f7f9f; }
+
+/* Middle row sections */
+nav, main, aside{
+  padding: 28px;
+  align-self: stretch;
+}
+
+/* Left nav */
+nav{
+  background: #a9d7f2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  flex: 0 0 22%;
+}
+
+/* Main content grows */
+main{
+  background: #3b82f6;
+  flex: 1 1 56%;
+  min-width: 280px;
+}
+
+/* Right sidebar */
+aside{
+  background: #5b5ce6;
+  flex: 0 0 22%;
+}
+
+/* Simple type styling */
+h1{ font-size: 32px; }
+h2{ font-size: 22px; margin-bottom: 12px; font-weight: 700; }
+p{ line-height: 1.5; margin-bottom: 16px; }
+a{ color: #0b2a3a; }

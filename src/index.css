@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/playfair-display/700-italic.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@theme {
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #f4f1ea;
+  --color-ink-dim: #a8a29a;
+  --color-base: #0b0a0d;
+  --color-base-raised: #131117;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background-color: rgba(244, 241, 234, 0.2);
+  color: var(--color-ink);
+}
+
+/* Focus ring only for keyboard users, not mouse clicks */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid rgba(244, 241, 234, 0.6);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
